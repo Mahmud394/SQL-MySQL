@@ -41,4 +41,4 @@ SELECT * FROM StudentInfo WHERE Marks +10 > 100;
 
 SELECT * FROM StudentInfo WHERE Marks =90;
 
--- Next 'Limit '
+-- Next 'Oparator 2 '

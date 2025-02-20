@@ -37,4 +37,18 @@ SELECT * FROM StudentInfo LIMIT 6;
 
 SELECT * FROM StudentInfo  WHERE Marks > 60 LIMIT 6;
 
+/*
+Syntax
+When alias is used on column:
+
+SELECT column_name AS alias_name
+FROM table_name;
+
+When alias is used on table:
+
+SELECT column_name(s)
+FROM table_name AS alias_name;
+*/
+
+
 -- Next 'Order by Clause'
