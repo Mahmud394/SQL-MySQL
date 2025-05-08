@@ -1,0 +1,53 @@
+
+-- JAR EMPLOYEES_ID 144 TAR TAKHE SALARY KAR KAR KOM 
+SELECT *
+FROM EMPLOYEES
+WHERE SALARY < (SELECT SALARY 
+                FROM EMPLOYEES
+                WHERE EMPLOYEES_ID = 144
+                );
+
+-- HIGHT SALARY K PY
+SELECT *
+FROM EMPLOYEES
+WHERE SALARY = (SELECT MAX(SALARY)
+                FROM EMPLOYEES
+                );
+
+-- MARKETING DEPT E K K KAJ KORE
+SELECT *
+FROM EMPLOYEES
+WHERE DEPARTMENT_ID = (
+                        SELECT DEPARTMENT_ID
+                        FROM DEPARTMENT
+                        WHERE DEPARTMENT_NAME = 'MARKETING'
+                        );
+
+
+-- MARKETING DEPT E K K KAJ  KORE AND TADER AVERAGE SALARY KOTO
+SELECT AVG(SALARY)
+FROM EMPLOYEES
+WHERE DEPARTMENT_ID = (
+                        SELECT DEPARTMENT_ID
+                        FROM DEPARTMENT
+                        WHERE DEPARTMENT_NAME = 'MARKETING'
+                        );
+
+-- IT DEPT. E KOTO JON KAJ KORE
+SELECT COUNT(*) AS MEMBERS
+FROM EMPLOYEES
+WHERE DEPARTMENT_ID = (
+                        SELECT DEPARTMENT_ID
+                        FROM DEPARTMENT
+                        WHERE DEPARTMENT_NAME = 'IT'
+                        );
+
+-- PROGRAMMER ER PESONE MONTHLY KOTO COST HOY
+SELECT SUM(SALARY)
+FROM EMPLOYEES
+WHERE JOB_ID = (SELECT JOB_ID
+                FROM JOBS
+                WHERE JOB_TITLE = 'PROGRAMMER'
+                );
+
+
